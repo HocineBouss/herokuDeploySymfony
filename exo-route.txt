@@ -1,0 +1,1 @@
+créer les route pour afficher les pages du dossier statique, en respectant la convention de nommage

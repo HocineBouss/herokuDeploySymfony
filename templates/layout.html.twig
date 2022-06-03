@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('home') }}"> Accueil </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_articles') }}"> Articles</a>
+                    </li>  
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Connexion </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Inscription </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Deconnexion </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Profil </a>
+                    </li>
+                 
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ path('ajout_article') }}">Ajout article</a></li>
+                            <li><a class="dropdown-item" href="">Ajout categorie</a></li>
+                            <li><a class="dropdown-item" href="">Ajout auteurs</a></li>
+                            <li><a class="dropdown-item" href="">Liste categories</a></li>
+                            <li><a class="dropdown-item" href="">Liste auteurs</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mb-5 pb-5">
+        {% block content %}
+            {# ce block restera vide ici, c'est lâ ou viendera s'inserer le contenu propre à chaque page qui héritera du layout #}
+        {% endblock %}
+    </main>
+
+    <footer class="fixed-bottom bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ path('cgv') }}"> - CGV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}"> - Nous contacter </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('quiSommesNous') }}"> - Qui sommes nous</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('valeurs') }}"> - Nos Valeurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('devenirBlogueur') }}"> - Devenir Blogueur </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('joinTeam') }}"> - Rejoindre l'équipe</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+
+
+{% endblock %}
